@@ -1,15 +1,12 @@
-BOARDCPPSRC =  $(BOARD_DIR)/board_configuration.cpp \
-    $(BOARD_DIR)/default_tune.cpp \
+BOARDCPPSRC =  $(BOARD_DIR)/board_configuration.cpp
 
-
-BOARDINC += $(BOARD_DIR)/generated/controllers/generated
-
-# defines SHORT_BOARD_NAME
-include $(BOARD_DIR)/meta-info.env
-
-# reduce memory usage monitoring
-DDEFS += -DRAM_UNUSED_SIZE=100
-
-# assign critical LED to a non-existent pin if you do not have it on your board
-# good old PD14 is still the default value
-# DDEFS += -DLED_CRITICAL_ERROR_BRAIN_PIN=Gpio::I15
+SHORT_BOARD_NAME=lcecu
+DDEFS += -DFIRMWARE_ID=\"lcecu\"
+DDEFS += -DDEFAULT_ENGINE_TYPE=engine_type_e::MINIMAL_PINS
+DDEFS += -DLED_CRITICAL_ERROR_BRAIN_PIN=Gpio::F15
+DDEFS += -DRAM_UNUSED_SIZE=1000
+DDEFS += -DSTM32_ADC_USE_ADC3=TRUE
+DDEFS += -DEFI_SOFTWARE_KNOCK=TRUE
+DDEFS += -DSTM32_SERIAL_USE_USART1=TRUE
+DDEFS += -DTS_SECONDARY_UxART_PORT=SD1 -DEFI_TS_SECONDARY_IS_SERIAL=TRUE
+DDEFS += -DEFI_AUX_SERIAL=FALSE
