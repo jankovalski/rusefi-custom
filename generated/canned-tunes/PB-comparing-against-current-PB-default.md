@@ -27,6 +27,38 @@
     engineConfiguration->cylinderBankSelect[11] = 1;
     // default 4.0
     engineConfiguration->benchTestOnTime = 1.5;
+    // default "Aux Linear 1"
+    engineConfiguration->ignBlends[0].blendParameter = GPPWM_Zero;
+    // default "Lua Gauge 2"
+    engineConfiguration->ignBlends[0].yAxisOverride = GPPWM_Zero;
+    // default "Aux Temp 2"
+    engineConfiguration->ignBlends[2].blendParameter = GPPWM_Zero;
+    // default "Aux Temp 2"
+    engineConfiguration->ignBlends[2].yAxisOverride = GPPWM_Zero;
+    // default "Aux Linear 1"
+    engineConfiguration->ignBlends[3].blendParameter = GPPWM_Zero;
+    // default "TPS"
+    engineConfiguration->ignBlends[3].yAxisOverride = GPPWM_Zero;
+    // default "Ethanol (Flex) %"
+    engineConfiguration->veBlends[0].blendParameter = GPPWM_Zero;
+    // default "GPPWM Output 3"
+    engineConfiguration->veBlends[1].blendParameter = GPPWM_Zero;
+    // default "INVALID"
+    engineConfiguration->veBlends[1].yAxisOverride = GPPWM_Zero;
+    // default "VVT 2 E"
+    engineConfiguration->veBlends[2].blendParameter = GPPWM_Zero;
+    // default "MAP"
+    engineConfiguration->veBlends[2].yAxisOverride = GPPWM_Zero;
+    // default "VVT 2 I"
+    engineConfiguration->veBlends[3].blendParameter = GPPWM_Zero;
+    // default "IAT"
+    engineConfiguration->veBlends[3].yAxisOverride = GPPWM_Zero;
+    // default "VVT 2 E"
+    engineConfiguration->boostOpenLoopBlends[0].blendParameter = GPPWM_Zero;
+    // default "Aux Temp 2"
+    engineConfiguration->boostOpenLoopBlends[1].blendParameter = GPPWM_Zero;
+    // default "Aux Temp 2"
+    engineConfiguration->boostOpenLoopBlends[1].yAxisOverride = GPPWM_Zero;
     // default 0.34
     engineConfiguration->throttlePedalSecondaryUpVoltage = 0.74;
     // default 1.86
@@ -121,11 +153,23 @@
     engineConfiguration->hpfpPeakPos = -30;
 
 
+	pbcannedtpsTpsAccelTable();
+	pbcannedvvtTable1();
 	pbcannedvvtTable2();
+	pbcannedscriptTable1();
+	pbcannedscriptTable2();
+	pbcannedscriptTable3();
 	pbcannedscriptTable4();
+	pbcannedALSTimingRetardTable();
+	pbcannedALSFuelAdjustment();
+	pbcannedALSIgnSkipTable();
 	pbcannedignitionTable();
+	pbcannedignitionIatCorrTable();
 	pbcannedveTable();
+	pbcannedmapEstimateTable();
+	pbcannedinjectionPhase();
+	pbcannedthrottle2TrimTable();
 	pbcannedmaxKnockRetardTable();
 	pbcannedlambdaTable();
-	pbcannedtcuSolenoidTable();
+	pbcannedhpfpCompensation();
 ```

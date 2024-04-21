@@ -37,6 +37,36 @@
     engineConfiguration->cylinderBankSelect[10] = 1;
     // default 0.0
     engineConfiguration->cylinderBankSelect[11] = 1;
+    // default "Aux Linear 1"
+    engineConfiguration->ignBlends[0].blendParameter = GPPWM_Zero;
+    // default "Lua Gauge 2"
+    engineConfiguration->ignBlends[0].yAxisOverride = GPPWM_Zero;
+    // default "INVALID"
+    engineConfiguration->ignBlends[3].blendParameter = GPPWM_Zero;
+    // default "TPS"
+    engineConfiguration->ignBlends[3].yAxisOverride = GPPWM_Zero;
+    // default "Aux Linear 2"
+    engineConfiguration->veBlends[0].blendParameter = GPPWM_Zero;
+    // default "TPS"
+    engineConfiguration->veBlends[0].yAxisOverride = GPPWM_Zero;
+    // default "GPPWM Output 3"
+    engineConfiguration->veBlends[1].blendParameter = GPPWM_Zero;
+    // default "TPS"
+    engineConfiguration->veBlends[1].yAxisOverride = GPPWM_Zero;
+    // default "INVALID"
+    engineConfiguration->veBlends[2].blendParameter = GPPWM_Zero;
+    // default "MAP"
+    engineConfiguration->veBlends[2].yAxisOverride = GPPWM_Zero;
+    // default "GPPWM Output 1"
+    engineConfiguration->veBlends[3].blendParameter = GPPWM_Zero;
+    // default "CLT"
+    engineConfiguration->veBlends[3].yAxisOverride = GPPWM_Zero;
+    // default "VVT 2 E"
+    engineConfiguration->boostOpenLoopBlends[0].blendParameter = GPPWM_Zero;
+    // default "TPS"
+    engineConfiguration->boostOpenLoopBlends[1].blendParameter = GPPWM_Zero;
+    // default "TPS"
+    engineConfiguration->boostOpenLoopBlends[1].yAxisOverride = GPPWM_Zero;
     // default 0.0
     engineConfiguration->tpsMin = 124;
     // default 1000.0
@@ -83,10 +113,22 @@
     engineConfiguration->gppwm[0].loadAxis = GPPWM_Map;
 
 
+	cannedtpsTpsAccelTable();
 	cannedboostTableOpenLoop();
+	cannedscriptTable1();
+	cannedscriptTable2();
+	cannedscriptTable3();
 	cannedscriptTable4();
+	cannedALSTimingRetardTable();
+	cannedALSFuelAdjustment();
+	cannedALSIgnSkipTable();
 	cannedignitionTable();
+	cannedignitionIatCorrTable();
 	cannedveTable();
+	cannedmapEstimateTable();
+	cannedinjectionPhase();
+	cannedthrottle2TrimTable();
+	cannedmaxKnockRetardTable();
 	cannedlambdaTable();
-	cannedtcuSolenoidTable();
+	cannedhpfpCompensation();
 ```

@@ -331,14 +331,15 @@
 	nb2cannedboostTableOpenLoop();
 	nb2cannedboostTableClosedLoop();
 	nb2cannedvvtTable1();
+	nb2cannedscriptTable1();
+	nb2cannedscriptTable2();
+	nb2cannedscriptTable3();
 	nb2cannedscriptTable4();
 	nb2cannedignitionTable();
-	nb2cannedignitionIatCorrTable();
 	nb2cannedveTable();
 	nb2cannedidleVeTable();
-	nb2cannedmapEstimateTable();
 	nb2cannedinjectionPhase();
 	nb2cannedlambdaTable();
-	nb2cannedtcuSolenoidTable();
+	nb2cannedhpfpCompensation();
 	nb2cannedpostCrankingFactor();
 ```

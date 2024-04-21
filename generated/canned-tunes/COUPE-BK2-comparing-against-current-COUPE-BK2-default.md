@@ -19,6 +19,22 @@
     engineConfiguration->cylinderBankSelect[10] = 1;
     // default 0.0
     engineConfiguration->cylinderBankSelect[11] = 1;
+    // default "Aux Linear 1"
+    engineConfiguration->ignBlends[0].blendParameter = GPPWM_Zero;
+    // default "Ignition Load"
+    engineConfiguration->ignBlends[3].blendParameter = GPPWM_Zero;
+    // default "Aux Linear 1"
+    engineConfiguration->veBlends[0].blendParameter = GPPWM_Zero;
+    // default "GPPWM Output 3"
+    engineConfiguration->veBlends[1].blendParameter = GPPWM_Zero;
+    // default "Battery Voltage"
+    engineConfiguration->veBlends[2].blendParameter = GPPWM_Zero;
+    // default "INVALID"
+    engineConfiguration->veBlends[3].blendParameter = GPPWM_Zero;
+    // default "VVT 2 E"
+    engineConfiguration->boostOpenLoopBlends[0].blendParameter = GPPWM_Zero;
+    // default "TPS"
+    engineConfiguration->boostOpenLoopBlends[1].blendParameter = GPPWM_Zero;
     // default "Normal"
     engineConfiguration->clutchDownPinInverted = false;
     // default "Normal"
@@ -51,9 +67,22 @@
 
 	coupleBK2cannedtpsTpsAccelTable();
 	coupleBK2cannedboostTableOpenLoop();
+	coupleBK2cannedscriptTable1();
+	coupleBK2cannedscriptTable2();
+	coupleBK2cannedscriptTable3();
 	coupleBK2cannedscriptTable4();
+	coupleBK2cannedALSTimingRetardTable();
+	coupleBK2cannedALSFuelAdjustment();
+	coupleBK2cannedALSIgnSkipTable();
+	coupleBK2cannedignitionTable();
+	coupleBK2cannedignitionIatCorrTable();
+	coupleBK2cannedveTable();
+	coupleBK2cannedmapEstimateTable();
+	coupleBK2cannedinjectionPhase();
 	coupleBK2cannedpedalToTpsTable();
+	coupleBK2cannedthrottle2TrimTable();
+	coupleBK2cannedmaxKnockRetardTable();
 	coupleBK2cannedlambdaTable();
-	coupleBK2cannedtcuSolenoidTable();
+	coupleBK2cannedhpfpCompensation();
 	coupleBK2cannedpostCrankingFactor();
 ```
